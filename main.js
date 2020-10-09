@@ -17,8 +17,19 @@ contectMeBtn.addEventListener("click", scrollsection);
 navbar.addEventListener("click", scrollsection);
 function scrollsection(event) {
   const target = event.target;
-  const tosection = target.dataset.to;
+  const toSection = target.dataset.to;
+  if (toSection == null) {
+    return;
+  }
   document
-    .querySelector(`#${tosection}`)
+    .querySelector(`#${toSection}`)
     .scrollIntoView({ behavior: "smooth" });
 }
+// fadeout homesection
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", (event) => {
+  if (homeHeight > window.scrollY) {
+    home.style.cssText = `opacity:${1 - window.scrollY / homeHeight}`;
+  }
+});
