@@ -109,6 +109,14 @@ p {
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
 }
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  top: 20px;
+  display: none;
+}
 /* home */
 #home {
   background: url(./images/homebackground-200515-154505.png) center/cover
@@ -286,6 +294,7 @@ p {
   width: 280px;
   height: 250px;
   margin: 2px;
+  background-color: var(--color-dark-white);
 }
 .project__img {
   max-width: 100%;
@@ -379,4 +388,41 @@ p {
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-dark-pink);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+  .about__majors {
+    flex-direction: column;
+  }
+  .major {
+    margin-bottom: 38px;
+  }
+  .skillset {
+    flex-direction: column;
+  }
+  .project {
+    flex-grow: 1;
+  }
+  .testimonial {
+    flex-direction: column;
+  }
+  .testimonial .testimonial__avata {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
 }
