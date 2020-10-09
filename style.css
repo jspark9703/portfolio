@@ -84,11 +84,15 @@ p {
 /* navbar */
 #navbar {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  position: fixed;
+  top: 0;
+  transition: all var(--animation-duration) linear;
 }
 .navbar__logo {
   font-size: var(--font-medium);
@@ -96,6 +100,7 @@ p {
 }
 .navbar__menu {
   display: flex;
+  text-transform: capitalize;
 }
 .navbar__menu__item {
   padding: 8px 12px;
@@ -117,11 +122,17 @@ p {
   top: 20px;
   display: none;
 }
+#navbar.scrolled {
+  transform: scale(1.01);
+  background-color: var(--color-pink);
+  padding: 10px;
+}
 /* home */
 #home {
   background: url(./images/homebackground-200515-154505.png) center/cover
     no-repeat;
   padding: 40px;
+  padding-top: 70px;
   text-align: center;
 }
 .home__avatar {
