@@ -1,4 +1,3 @@
-"use strict";
 // navbar when it is on the top
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
@@ -24,6 +23,10 @@ function scrollsection(event) {
   document
     .querySelector(`#${toSection}`)
     .scrollIntoView({ behavior: "smooth" });
+  if (toSection === "home") {
+    navbar.classList.remove("menu-active");
+  }
+  navbarMenu.classList.remove("active");
 }
 // fadeout homesection
 const home = document.querySelector(".home__container");
@@ -45,4 +48,43 @@ document.addEventListener("scroll", () => {
 
 arrowUpBtn.addEventListener("click", (event) => {
   window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+});
+//filterring animation
+const categoryBtn = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+categoryBtn.addEventListener("click", sortProject);
+
+function sortProject(event) {
+  const target =
+    event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  const filter = event.target.dataset.id || event.target.parentNode.dataset.id;
+  const categoryBtnssActive = document.querySelector(".category__btn.active");
+  if (categoryBtnssActive !== null) {
+    categoryBtnssActive.classList.remove("active");
+  }
+  target.classList.add("active");
+  if (filter == null) {
+    return;
+  } else {
+    projectContainer.classList.add("anime-out");
+    setTimeout(() => {
+      projects.forEach((project) => {
+        if (filter === "all" || filter === project.dataset.sort) {
+          project.classList.remove("invisible");
+        } else {
+          project.classList.add("invisible");
+        }
+      });
+      projectContainer.classList.remove("anime-out");
+    }, 300);
+  }
+}
+
+// menu active
+const toggleBtn = document.querySelector(".navbar__toggle-btn");
+const navbarMenu = document.querySelector(".navbar__menu");
+toggleBtn.addEventListener("click", () => {
+  navbar.classList.toggle("menu-active");
+  navbarMenu.classList.toggle("active");
 });
