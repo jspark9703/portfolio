@@ -403,7 +403,28 @@ p {
   transform: scale(1.1);
   color: var(--color-dark-pink);
 }
-
+.arrow-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-dark-pink);
+  border-radius: 50%;
+  line-height: 55px;
+  text-align: center;
+  transition: all 500ms ease-in;
+  opacity: 0;
+  pointer-events: none;
+}
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.arrow-up i {
+  font-size: 30px;
+  color: var(--color-white);
+}
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;

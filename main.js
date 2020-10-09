@@ -33,3 +33,16 @@ document.addEventListener("scroll", (event) => {
     home.style.cssText = `opacity:${1 - window.scrollY / homeHeight}`;
   }
 });
+//arrow up btn
+const arrowUpBtn = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 20) {
+    arrowUpBtn.classList.add("show");
+  } else {
+    arrowUpBtn.classList.remove("show");
+  }
+});
+
+arrowUpBtn.addEventListener("click", (event) => {
+  window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+});
