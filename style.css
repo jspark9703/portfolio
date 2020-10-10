@@ -147,6 +147,7 @@ p {
   height: 250px;
   border-radius: 50%;
   border: solid 2px var(--color-light-white);
+  margin-top: 40px;
 }
 .home__title,
 .home__description,
@@ -470,9 +471,6 @@ p {
   }
   #navbar.menu-active .navbar__toggle-btn {
     top: 14px;
-  }
-  .home__avatar {
-    margin-top: 40px;
   }
   .about__majors {
     flex-direction: column;
