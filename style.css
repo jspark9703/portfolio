@@ -447,6 +447,7 @@ p {
 @media screen and (max-width: 768px) {
   .section {
     padding: 16px;
+    padding-top: 40px;
   }
   .navbar__toggle-btn {
     display: block;
@@ -469,6 +470,9 @@ p {
   }
   #navbar.menu-active .navbar__toggle-btn {
     top: 14px;
+  }
+  .home__avatar {
+    margin-top: 40px;
   }
   .about__majors {
     flex-direction: column;
