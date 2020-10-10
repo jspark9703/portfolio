@@ -489,6 +489,7 @@ p {
     flex-direction: column;
     overflow: hidden;
     height: 280px;
+    margin-bottom: 10px;
   }
 
   .project__img {
@@ -501,8 +502,10 @@ p {
     background-color: transparent;
     opacity: 1;
     transform: translateY(0);
+    margin-bottom: 10px;
   }
   .project__description h3 {
+    font-weight: var(--weight-bold);
     color: var(--color-black);
     font-size: var(--font-small);
     margin: 0;
@@ -511,7 +514,7 @@ p {
     display: none;
   }
   .project__description span {
-    color: var(--color-black);
+    color: var(--color-dark-grey);
     font-size: var(--font-micro);
   }
 
