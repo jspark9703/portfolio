@@ -26,6 +26,7 @@ function scrollsection(event) {
   if (toSection === "home") {
     navbar.classList.remove("menu-active");
   }
+  navbar.classList.remove("menu-active");
   navbarMenu.classList.remove("active");
 }
 // fadeout homesection
@@ -88,3 +89,20 @@ toggleBtn.addEventListener("click", () => {
   navbar.classList.toggle("menu-active");
   navbarMenu.classList.toggle("active");
 });
+
+// category__count
+const categoryCount = document.querySelectorAll(".category__count");
+categoryCount.forEach((span) => {
+  span.innerText = `${sortCount(span.parentNode.dataset.id)}`;
+});
+function sortCount(id) {
+  if (id === "all") {
+    return projects.length;
+  }
+  const arrayFilterId = [];
+  projects.forEach((project) => {
+    arrayFilterId.push(project.dataset.sort);
+    return arrayFilterId;
+  });
+  return arrayFilterId.filter((project) => project === id).length;
+}
