@@ -5,13 +5,13 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-pink: #fe918d;
-  --color-dark-pink: #ff6863;
+  --color-pink: #2196f3;
+  --color-dark-pink: #0069c0;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
-  --color-yellow: #fff7d1;
+  --color-blue: #6ec6ff;
+  --color-yellow: #ffeb3b;
   --color-orange: #feb546;
   --color-black: #000000;
 
@@ -135,7 +135,7 @@ p {
 }
 /* home */
 #home {
-  background: url(./images/homebackground-200515-154505.png) center/cover;
+  background: url(./images/background.png) center/cover;
   position: relative;
   padding: 40px;
   padding-top: 70px;
@@ -231,7 +231,7 @@ p {
 
 /* skill */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: var(--color-blue);
 }
 .skillset {
   display: flex;
